@@ -1,0 +1,133 @@
+/* ----------------------------------------  la section hero */
+.hero {
+  background-image: url("images/maldives.jpg");
+  width: auto;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero {
+  position: relative;
+  color: black;
+  padding: 50px 20px;
+
+  &__titre {
+    color: white;
+    text-shadow:
+      3px 3px 8px rgba(0, 100, 0, 0.7),
+      0 0 15px rgba(0, 255, 0, 0.5);
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__titre:hover {
+    color: #f1c40f;
+    transform: scale(1.05);
+  }
+
+  &__description {
+    max-width: 60ch;
+    line-height: 1.5;
+  }
+
+  &__contenu a {
+    color: black;
+  }
+
+  &__courriel a {
+    color: black;
+  }
+
+  &__bouton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(100, 250, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+  }
+
+  &__icone-app {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+/*******************************************FORM******************************************/
+.hero__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15rem;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.hero__form-input[type="submit"] {
+  padding: 2px 50px;
+  cursor: pointer;
+}
+
+.hero__form-input {
+  width: 100%;
+  padding: 2px 2px;
+  border: 2px solid #02c5df;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+/***************************************************************************************/
+
+@media (max-width: 870px) {
+  .hero__form {
+    display: none;
+  }
+}
+
+@media (max-width: 870px) {
+  .hero__bouton {
+    margin-top: 9rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .hero {
+    position: relative;
+    color: black;
+    padding: 50px 20px;
+
+    &__titre {
+      text-shadow: 2px 2px 5px #006400;
+    }
+
+    &__description {
+      max-width: 70ch;
+      line-height: 1.5;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    &__contenu a {
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.recherche {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.recherche__input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.recherche img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+}
+
+@media (max-width: $point__rupture) {
+  .recherche {
+    display: none;
+  }
+}

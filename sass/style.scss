@@ -1,0 +1,46 @@
+/*
+Theme Name:  Amir-nkn-33W
+Theme URI: https://github.com/Amir-nkn
+Author: Amir-nkn
+Author URI: 
+Description:D
+éveloppement d'un de base dans le cadre du cours 33W
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: https://github.com/Amir-nkn
+Text Domain:Amir-nkn
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*  ////////////////////////////////
+Les variables
+//////////////////////////////////// */
+
+@import "variables/couleurs";
+@import "variables/dimension";
+
+/*  ////////////////////////////////
+Les bases
+//////////////////////////////////// */
+
+@import "base/simple";
+@import "base/liens";
+
+/*  ////////////////////////////////
+Les composants
+//////////////////////////////////// */
+
+@import "composants/recherche";
+@import "composants/hero";
+@import "composants/menu";
+@import "composants/carte";
+
+/*  ////////////////////////////////
+Les layouts
+//////////////////////////////////// */
+@import "layout/entete";
+@import "layout/principal";
