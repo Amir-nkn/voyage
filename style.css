@@ -76,7 +76,6 @@ Les composants
   align-items: center;
   position: relative;
 }
-
 .recherche__input {
   padding: 5px 10px;
   border: 1px solid #ccc;
@@ -84,8 +83,7 @@ Les composants
   margin-left: 20px;
   font-size: 14px;
 }
-
-.recherche img {
+.recherche__recherche img {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -230,8 +228,7 @@ Les composants
 .menu__li:hover {
   text-decoration: underline blue;
 }
-
-.menu a {
+.menu__a {
   font-size: 14px;
   color: #000000;
   padding: 2px 5px;

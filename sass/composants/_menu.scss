@@ -9,12 +9,13 @@
   &__li:hover {
     text-decoration: underline blue;
   }
-}
 
-.menu a {
+
+&__a {
   font-size: 14px;
   color: #000000;
   padding: 2px 5px;
+}
 }
 
 .menu-icon {
@@ -26,6 +27,8 @@
 .menu-toggle {
   display: none;
 }
+
+
 
 @media (max-width: $point__rupture) {
   .entete__menu {
