@@ -1,9 +1,21 @@
 <?php
+
+function mon_theme_supports() {
+  add_theme_support('title-tag');
+  add_theme_support('menus');
+}
+add_action( 'after_setup_theme', 'mon_theme_supports' );
+
+
+
 function theme_tp_enqueue_styles() { 
 wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css'); 
 wp_enqueue_style('style_principal', get_stylesheet_uri()); 
+
+
 } 
 add_action('wp_enqueue_scripts', 'theme_tp_enqueue_styles');
+
 
 
 /**
