@@ -54,56 +54,17 @@
                 </div>
             </form>
         </section>
-        <section class="promotion">
-            <div class="carte carte--grande">
-                <div class="carte__image">
-                    <img src="images/pexels1.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels2.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels3.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels4.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels5.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels6.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels7.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels8.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels9.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__image">
-                    <img src="images/pexels10.jpg" alt="Image de voyage">
-                </div>
-                <div class="carte__contenu">
-                    <h2 class="carte__titre">Destination de rêve</h2>
-                    <p class="carte__description">
-                        Découvrez des endroits magnifiques à travers le monde.
-                    </p>
-                    <button class="carte__bouton carte__bouton--actif">Réserver</button>
-                </div>
-            </div>
-        </section>
+       
 
         <section class="populaire">
         <div class="global">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <article>
-        <h2><?php the_title(); ?></h2>
-        <div><?php the_content(); ?></div>
-    </article>
-       <?php endwhile; endif; ?>
+                <article>
+                    <h2><?php the_title(); ?></h2>
+                    <div><?php the_content(); ?></div>
+                </article>
+        <?php endwhile;
+        endif; ?>
         </div>
         </section>
         <?php get_footer() ?>

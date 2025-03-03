@@ -1,0 +1,12 @@
+
+.wp-block-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 10rem;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+

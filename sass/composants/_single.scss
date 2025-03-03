@@ -1,0 +1,28 @@
+.single-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.single-title {
+    font-size: 24px;
+    color: rgb(44, 26, 58);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.single-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.single-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
