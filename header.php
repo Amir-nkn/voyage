@@ -16,12 +16,14 @@
     <main class="global">
         <header>
             <div class="entete global">
-                <figure class="entete__logo">
-                <a href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/logo_tuto.png'); ?>" alt="Logo">
-            </a>
+            <figure class="entete__logo">
+            <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+                ?>
+</figure>
 
-                </figure>
                 <div class="entete__nav">
                 <input type="checkbox" id="menu-toggle" class="menu-toggle">
                 <label for="menu-toggle" class="menu-icon">&#9776;</label>

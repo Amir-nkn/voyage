@@ -1,77 +1,102 @@
-<?php get_header();?>
-        <section class="hero">
-            <div class="hero__contenu global">
-                <h1 class="hero__titre">
-                    Partez à l'aventure avec Mondo Voyages !
-                </h1>
-                <p class="hero__description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                    aspernatur est officiis, mollitia minus asperiores quas libero saepe
-                    consequuntur at blanditiis et eligendi, sequi sit quae laboriosam,
-                    ex delectus nesciunt.
-                </p>
-            </div>
-            <div class="hero__courriel">
-                <a href="mailto:info@cmaisonneuve.qc.ca"><strong>info@cmaisonneuve.qc.ca</strong></a>
-                <p><strong>3800, rue Sherbrooke, Montreal</strong></p>
-                <p><strong>514-254-7131</strong></p>
-            </div>
-            <div class="hero__bouton-container">
-                <button class="hero__bouton">
-                    S'INSCRIRE
-                </button>
-                <div class="hero__icone-app">
-                    <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20"
-                        alt="logo facebook">
-                    <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20"
-                        alt="logo linkedin">
-                    <img src="https://s2.svgbox.net/social.svg?ic=paypal&color=000000" width="20" height="20"
-                        alt="logo paypal">
-                    <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20"
-                        alt="logo stackoverflow">
-                </div>
-            </div>
-            <form class="hero__form">
-                <div class="form__group">
-                    <label for="nom" class="form__label">Nom</label>
-                    <input type="text" id="nom" class="hero__form-input" placeholder="Écrivez votre nom">
-                </div>
-                <div class="form__group">
-                    <label for="prenom" class="form__label">Prénom</label>
-                    <input type="text" id="prenom" class="hero__form-input" placeholder="Écrivez votre prénom">
-                </div>
-                <div class="form__group">
-                    <label for="courriel" class="form__label">Courriel</label>
-                    <input type="email" id="courriel" class="hero__form-input" placeholder="Écrivez votre courriel">
-                </div>
-                <div class="form__group">
-                    <label for="telephone" class="form__label">Téléphone</label>
-                    <input type="tel" id="telephone" class="hero__form-input" placeholder="Écrivez votre téléphone">
-                </div>
-                <div class="form__group">
-                    <label for="submit-btn" class="form__label"><br></label>
-                    <input type="submit" id="submit-btn" value="S'INSCRIRE" class="hero__form-input">
-                </div>
-            </form>
-        </section>
-        
-        <section class="populaire">
-        <div class="global">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php if (in_category('galerie')) {
-                    the_content();
-                } else { ?>
-                    <article>
-                        <h2><?php the_title(); ?></h2>
-                        <div><?php echo wp_trim_words(get_the_excerpt(), 25, " ... "); ?></div>
-                    </article>
-                <?php } ?>
-        <?php endwhile;
-        endif; ?>
-        </div>
-        </section>
-    </main>
-    <?php get_footer() ?>
-</body>
+<?php get_header(); ?>
 
+<?php
+
+$hero_auteur = get_theme_mod('hero_auteur', 'Nom de l’auteur');
+$hero_telephone = get_theme_mod('hero_telephone', '000-000-0000');
+$hero_background = get_theme_mod('hero_background', '');
+$hero_couleur = get_theme_mod('hero_couleur', '#000000');
+?>
+
+<style>
+    .hero__contenu {
+        color: <?php echo esc_html($hero_couleur); ?>;
+    }
+</style>
+
+<section class="hero" style="background-image: url('<?php echo esc_url($hero_background); ?>')">
+    <div class="hero__contenu global">
+        <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
+        <p class="hero__description"><?php bloginfo('description'); ?></p>
+        <p class="hero__courriel"><a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('admin_email'); ?></a></p>
+        <p class="hero__adresse">3800, rue Sherbrooke, Montreal</p>
+        <p class="hero__auteur">Auteur : <?php echo esc_html($hero_auteur); ?></p>
+        <p class="hero__auteur">Téléphone : <?php echo esc_html($hero_telephone); ?></p>
+        <section class="hero__icone-app">
+        <?php get_template_part('gabarits/icone-sociaux'); ?>
+        </section>
+    </div>
+
+    <form class="hero__form">
+        <div class="form__group">
+            <label for="nom" class="form__label">Nom</label>
+            <input type="text" id="nom" class="hero__form-input" placeholder="Écrivez votre nom">
+        </div>
+        <div class="form__group">
+            <label for="prenom" class="form__label">Prénom</label>
+            <input type="text" id="prenom" class="hero__form-input" placeholder="Écrivez votre prénom">
+        </div>
+        <div class="form__group">
+            <label for="courriel" class="form__label">Courriel</label>
+            <input type="email" id="courriel" class="hero__form-input" placeholder="Écrivez votre courriel">
+        </div>
+        <div class="form__group">
+            <label for="telephone" class="form__label">Téléphone</label>
+            <input type="tel" id="telephone" class="hero__form-input" placeholder="Écrivez votre téléphone">
+        </div>
+        <div class="form__group">
+            <label for="submit-btn" class="form__label"><br></label>
+            <input type="submit" id="submit-btn" value="S'INSCRIRE" class="hero__form-input">
+        </div>
+    </form>
+</section>
+
+<section class="galerie">
+    <div class="galerie__contenu global">
+        <?php
+     
+        $galerie_query = new WP_Query(array(
+            'category_name' => 'galerie',
+            'posts_per_page' => -1
+        ));
+        if ($galerie_query->have_posts()) :
+            while ($galerie_query->have_posts()) : $galerie_query->the_post(); ?>
+                <article class="carte">
+                    <?php the_content(); ?>
+                </article>
+        <?php endwhile; endif;
+        wp_reset_postdata();
+        ?>
+    </div>
+</section>
+
+<section class="populaire">
+    <div class="global">
+        <?php
+        if (have_posts()) :
+            while (have_posts()) : the_post();
+                if (!in_category('galerie')) :
+                    get_template_part('gabarits/carte');
+                endif;
+            endwhile;
+        endif;
+        ?>
+    </div>
+</section>
+
+
+<section class="destination">
+    <div class="global">
+        <div class="button__destination">
+            <button  data-categorie="2">Aventure</button>
+            <button data-categorie="8">Croisire</button>
+            <button data-categorie="3">Culturel</button>
+        </div>
+
+    <h2>Articles de la catégorie</h2>
+    <div class="destination__list"></div>
+    </div>
+</section>
+<?php get_footer(); ?>
+</body>
 </html>

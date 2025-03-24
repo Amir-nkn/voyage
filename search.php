@@ -15,7 +15,7 @@
                 <?php while (have_posts()) : the_post(); ?>
 
                     <?php if (in_category('galerie')) : ?>
-                        <!-- نمایش گالری -->
+                  
                         <?php
                         $gallery = get_post_gallery(get_the_ID(), false);
                         if ($gallery) :
@@ -29,7 +29,7 @@
                         endif; ?>
 
                     <?php elseif (in_category('populaire')) : ?>
-                        <!-- نمایش مقالات `populaire` -->
+                     
                         <article class="populaire-article">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
@@ -39,7 +39,7 @@
                         </article>
 
                     <?php else : ?>
-                        <!-- نمایش سایر مقالات -->
+                  
                         <article class="search-article">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
@@ -63,7 +63,7 @@
                 ?>
             </nav>
         <?php else : ?>
-            <div class="no-results">
+            <div >
                 <h3>Aucun résultat trouvé</h3>
                 <p>Désolé, rien ne correspond à "<?php echo esc_html($search_query); ?>". Essayez d’autres mots-clés !</p>
             </div>

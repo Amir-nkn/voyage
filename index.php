@@ -20,16 +20,14 @@
                 <button class="hero__bouton">
                     S'INSCRIRE
                 </button>
-                <div class="hero__icone-app">
-                    <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20"
-                        alt="logo facebook">
-                    <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20"
-                        alt="logo linkedin">
-                    <img src="https://s2.svgbox.net/social.svg?ic=paypal&color=000000" width="20" height="20"
-                        alt="logo paypal">
-                    <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20"
-                        alt="logo stackoverflow">
-                </div>
+                <section class="hero__sociaux">
+            <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="32" height="32">
+            <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="32" height="32">
+            <img src="https://s2.svgbox.net/social.svg?ic=wordpress&color=000000" width="32" height="32">
+            <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000000" width="32" height="32">
+            <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="32" height="32">
+
+        </section>
             </div>
             <form class="hero__form">
                 <div class="form__group">
@@ -57,7 +55,7 @@
        
 
         <section class="populaire">
-        <div class="global">
+    <div class="global">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article>
                     <h2><?php the_title(); ?></h2>
@@ -65,8 +63,8 @@
                 </article>
         <?php endwhile;
         endif; ?>
-        </div>
-        </section>
+    </div>
+</section>
         <?php get_footer() ?>
     </main>
 </body>
