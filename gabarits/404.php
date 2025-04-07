@@ -23,13 +23,12 @@ get_header();
     <section class="erreur__destinations">
 
   <nav class="erreur__menu">
-    <?php
-      wp_nav_menu(array(
-        'theme_location' => 'menu_erreur',
-        'container' => 'ul',
-        'menu_class' => 'erreur__menu-liste'
-      ));
-    ?>
+  <?php wp_nav_menu(array(
+  'menu' => 'Menu destinations 404',
+  'container' => 'nav',
+  'container_class' => 'erreur__menu'
+)); ?>
+
   </nav>
 </section>
 

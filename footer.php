@@ -1,11 +1,13 @@
 <footer class="footer">
 
-    <!-- Menu externe -->
+
     <?php wp_nav_menu(array(
-        "menu" => "externe",
-        "container" => "nav",
-        "container_class" => "footer-nav"
-    )); ?>
+        'menu' => 'Menu footer',
+        'container' => 'nav',
+        'container_class' => 'footer__menu'
+      )); ?>
+      
+
 
     <div class="footer-container">
 
