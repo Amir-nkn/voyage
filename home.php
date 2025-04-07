@@ -91,10 +91,18 @@ $hero_couleur = get_theme_mod('hero_couleur', '#000000');
             <button  data-categorie="2">Aventure</button>
             <button data-categorie="8">Croisire</button>
             <button data-categorie="3">Culturel</button>
-        </div> -->
-
+        </div> 
+        </div>
+        </section>-->
     <h2>Articles de la catégorie</h2>
-    <div class="destination__list"></div>
+    <section class="destination">
+    <div class="global">
+
+        <div class="destination__bouton">
+            <?php categories_liste("destination"); ?>
+        </div>
+
+        <div class="destination__list"></div>
     </div>
 </section>
 <?php get_footer(); ?>

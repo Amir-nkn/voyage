@@ -1,26 +1,44 @@
 (function () {
     console.log("destination.js");
- const destinationButton = document.querySelectorAll(".button__destination button");
-
-        const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
-        const domaine = window.location.href;
+    const domaine = window.location.href;
+    const categorie__ul__li = document.querySelectorAll(".categorie__ul__li");
+    console.log(categorie__ul__li.length);
+    categorie__ul__li.forEach((li) => {
+      console.log(li.getAttribute("data-category-id"));
+      li.addEventListener("click", function () {
+        let categoryId = li.getAttribute("data-category-id");
+        console.log(categoryId);
         const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
-    console.log(apiUrl);
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const destinationList = document.querySelector('destination__list');
-                data.forEach(article => {
-                    const articleElement = document.createElement('div');
-                    articleElement.innerHTML = `
-                        <h3>${article.title.rendered}</h3>
-                        <div>${article.excerpt.rendered}</div>
-                        <a href="${article.link}">Lire plus</a>
-                    `;
-                    destinationList .appendChild(articleElement);
-                });
-            })
-            .catch(error => console.error('Erreur lors de la récupération des articles:', error));
-
-
+        console.log(apiUrl);
+        mon_fetch(apiUrl);
+      });
+    });
+    //const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
+  
+    /**
+     * mon_fetch permet d'extraire les destination de différente catégorie
+     * @param {} apiUrl
+     */
+    function mon_fetch(apiUrl) {
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const destinationList = document.querySelector(".destination__list");
+          destinationList.innerHTML = "";
+  
+          console.log(data);
+          data.forEach((article) => {
+            const articleElement = document.createElement("div");
+            articleElement.innerHTML = `
+                      <h3>${article.title.rendered}</h3>
+                    
+                      <a href="${article.link}">Lire plus</a>
+                  `;
+            destinationList.appendChild(articleElement);
+          });
+        })
+        .catch((error) =>
+          console.error("Erreur lors de la récupération des articles:", error)
+        );
+    }
   })();

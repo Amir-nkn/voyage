@@ -5,10 +5,14 @@ if (!have_posts()) {
     global $wp_query;
     $wp_query->set_404();
     status_header(404);
-    include(get_query_template('404'));
+    get_header();
+    include(get_template_directory() . '/gabarits/404.php');
+    get_footer();
     exit;
 }
 ?>
+
+
 
 <main class="recherche">
   <section class="recherche__contenu">

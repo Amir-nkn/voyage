@@ -97,3 +97,67 @@ $wp_customize->add_control('footer_texte_personnalise', array(
 
 }
 add_action('customize_register', 'theme_tp_customize_register');
+
+
+function erreur_404_customizer($wp_customize) {
+    $wp_customize->add_section('section_404', array(
+        'title' => __('Page 404', 'theme_tp'),
+        'priority' => 30,
+    ));
+
+    // ✅ Image de fond
+    $wp_customize->add_setting('erreur_404_image', array(
+        'default' => get_template_directory_uri() . '/images/404-default.jpg',
+        'sanitize_callback' => 'esc_url'
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_404_image', array(
+        'label' => __('Image de fond', 'theme_tp'),
+        'section' => 'section_404',
+        'settings' => 'erreur_404_image',
+    )));
+
+    // ✅ Titre
+    $wp_customize->add_setting('erreur_404_titre', array(
+        'default' => "Oops, vous avez échoué sur l'île 404 !",
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('erreur_404_titre', array(
+        'label' => __('Titre', 'theme_tp'),
+        'section' => 'section_404',
+        'type' => 'text',
+    ));
+
+    // ✅ Message
+    $wp_customize->add_setting('erreur_404_message', array(
+        'default' => "Pas de panique, cette page n'existe pas mais vous pouvez revenir à l'accueil !",
+        'sanitize_callback' => 'sanitize_textarea_field'
+    ));
+    $wp_customize->add_control('erreur_404_message', array(
+        'label' => __('Message', 'theme_tp'),
+        'section' => 'section_404',
+        'type' => 'textarea',
+    ));
+
+    // ✅ Couleur du bouton
+    $wp_customize->add_setting('erreur_404_couleur_bouton', array(
+        'default' => '#ffd700',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    $wp_customize->add_control('erreur_404_couleur_bouton', array(
+        'label' => __('Couleur du bouton', 'theme_tp'),
+        'section' => 'section_404',
+        'type' => 'color',
+    ));
+
+    // ✅ Couleur de fond du champ recherche
+    $wp_customize->add_setting('erreur_404_couleur_input', array(
+        'default' => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    $wp_customize->add_control('erreur_404_couleur_input', array(
+        'label' => __('Couleur du champ de recherche', 'theme_tp'),
+        'section' => 'section_404',
+        'type' => 'color',
+    ));
+}
+add_action('customize_register', 'erreur_404_customizer');
