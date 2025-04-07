@@ -45,3 +45,20 @@
     padding-bottom: 20px;
     border-bottom: 1px dashed #ccc;
 }
+
+
+.single-categories a {
+    display: inline-block;
+    background-color: #55268b;      /* رنگ بنفش تیره */
+    color: #fff;                    /* متن سفید */
+    padding: 6px 12px;              /* فاصله داخلی */
+    margin: 5px 5px 0 0;            /* فاصله بین دکمه‌ها */
+    border-radius: 20px;            /* گوشه‌های گرد */
+    text-decoration: none;          /* حذف زیرخط */
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.single-categories a:hover {
+    background-color: #7c4dd1;      /* رنگ روشن‌تر در حالت hover */
+}

@@ -12,9 +12,22 @@
         <!-- Section contact -->
         <section class="footer-contact">
             <h2 class="footer-title">Contact</h2>
-            <p class="footer-email">📧 <a href="mailto:info@mondovoyages.com">info@mondovoyages.com</a></p>
-            <p class="footer-phone">📞 <a href="tel:+15142547131">+1 (514) 254-7131</a></p>
-            <p class="footer-address">📍 3800, rue Sherbrooke, Montreal</p>
+            <p class="footer-email">
+    📧 <a href="mailto:<?php echo esc_attr(get_theme_mod('footer_email')); ?>">
+        <?php echo esc_html(get_theme_mod('footer_email')); ?>
+    </a>
+</p>
+
+<p class="footer-phone">
+    📞 <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', get_theme_mod('footer_phone')); ?>">
+        <?php echo esc_html(get_theme_mod('footer_phone')); ?>
+    </a>
+</p>
+
+<p class="footer-address">
+    📍 <?php echo esc_html(get_theme_mod('footer_address')); ?>
+</p>
+
         </section>
 
         <!-- Section horaire -->
@@ -38,7 +51,8 @@
 
     <!-- Bas de page -->
     <div class="footer-bottom">
-        <p>© <?php echo date("Y"); ?> Mondo Voyages - Tous droits réservés.</p>
+    <p><?php echo esc_html(get_theme_mod('footer_texte_personnalise')); ?></p>
+
     </div>
 
     <?php wp_footer(); ?>

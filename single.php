@@ -1,11 +1,11 @@
 <?php get_header(); ?>
-
+<h1>single</h1>
 <main class="single-container">
     <article class="single-article">
         <h1 class="single-title"><?php the_title(); ?></h1>
 
         <?php if (has_post_thumbnail()) : ?>
-            <img src="<?php the_post_thumbnail_url('large'); ?>" class="single-image" alt="<?php the_title(); ?>">
+            <img src="<?php the_post_thumbnail_url('medium'); ?>" class="single-image" alt="<?php the_title(); ?>">
         <?php endif; ?>
 
         <div class="single-content">

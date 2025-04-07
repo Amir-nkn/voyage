@@ -2,6 +2,13 @@
 
 <main class="search-main">
     <section class="search-results">
+    <?php
+    if (!have_posts()) {
+        include get_template_directory() . '/404.php';
+        return;
+    }
+    ?>
+
         <?php
         global $wp_query;
         $total_results = $wp_query->found_posts;
@@ -15,7 +22,6 @@
                 <?php while (have_posts()) : the_post(); ?>
 
                     <?php if (in_category('galerie')) : ?>
-                  
                         <?php
                         $gallery = get_post_gallery(get_the_ID(), false);
                         if ($gallery) :
@@ -29,7 +35,6 @@
                         endif; ?>
 
                     <?php elseif (in_category('populaire')) : ?>
-                     
                         <article class="populaire-article">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
@@ -39,7 +44,6 @@
                         </article>
 
                     <?php else : ?>
-                  
                         <article class="search-article">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
@@ -62,12 +66,8 @@
                 ));
                 ?>
             </nav>
-        <?php else : ?>
-            <div >
-                <h3>Aucun résultat trouvé</h3>
-                <p>Désolé, rien ne correspond à "<?php echo esc_html($search_query); ?>". Essayez d’autres mots-clés !</p>
-            </div>
-        <?php endif; ?>
+        <?php endif; ?> 
+
     </section>
 </main>
 

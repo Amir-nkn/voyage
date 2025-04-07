@@ -177,7 +177,7 @@ Les composants
   gap: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15rem;
+  margin-top: 19rem;
   padding: 20px;
   background: rgb(255, 255, 255);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -445,51 +445,70 @@ Composant .carte — Version Pro
   font-size: 0.95rem;
 }
 .carte__bouton {
-  padding: 12px 24px;
-  background-color: rgb(97, 45, 168);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px, rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px, rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
   cursor: pointer;
-  text-decoration: none;
   display: inline-block;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
   margin: 0 auto;
 }
-.carte__bouton--actif {
-  background-color: rgb(75, 35, 130);
-}
 .carte__bouton:hover {
-  background-color: rgb(75, 35, 130);
-  transform: scale(1.05);
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
-.carte .carte__bouton {
-  padding: 12px 24px;
-  background-color: rgb(97, 45, 168);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
+.carte .petit {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
   cursor: pointer;
-  text-decoration: none;
   display: inline-block;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
-.carte .carte__bouton:hover {
-  background-color: rgb(75, 35, 130);
-  transform: scale(1.05);
+.carte .petit:hover,
+.carte .petit:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+.carte .petit:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+.carte .petit:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
 }
 
-.wp-block-image .size-large .ma-galerie-personnalisee {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  justify-content: center;
-  margin: 30px 0;
-  background-color: blue;
+.galerie {
+  margin-top: 1rem;
+  max-width: 1000px;
 }
 
 .ma-galerie-personnalisee img {
@@ -497,6 +516,32 @@ Composant .carte — Version Pro
   height: auto;
   border-radius: 6px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.populaire .global {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.populaire p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 10px;
+}
+
+.populaire h2 {
+  font-size: 2.2rem;
+  color: #333;
+  border-bottom: 3px solid #d3c4f3;
+  padding-bottom: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+body > article {
+  padding: 40px;
 }
 
 /* ========== FOOTER ========== */
@@ -665,6 +710,22 @@ Composant .carte — Version Pro
   border-bottom: 1px dashed #ccc;
 }
 
+.single-categories a {
+  display: inline-block;
+  background-color: #55268b; /* رنگ بنفش تیره */
+  color: #fff; /* متن سفید */
+  padding: 6px 12px; /* فاصله داخلی */
+  margin: 5px 5px 0 0; /* فاصله بین دکمه‌ها */
+  border-radius: 20px; /* گوشه‌های گرد */
+  text-decoration: none; /* حذف زیرخط */
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.single-categories a:hover {
+  background-color: #7c4dd1; /* رنگ روشن‌تر در حالت hover */
+}
+
 /* ==== Container principal des résultats ==== */
 .search-main {
   max-width: 1000px;
@@ -801,6 +862,55 @@ Composant .carte — Version Pro
   transform: scale(1.05);
 }
 
+.erreur-404 {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f9f5ff;
+  color: #3d2551;
+  font-family: "Segoe UI", Arial, sans-serif;
+  animation: fadeIn 1s ease-in;
+  min-height: 70vh;
+}
+
+.erreur-404 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.erreur-404 p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.bouton-retour {
+  display: inline-block;
+  background-color: #6c4ec1;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bouton-retour:hover {
+  background-color: #583aa1;
+  transform: scale(1.05);
+}
+
+/* افکت ساده هنگام ورود */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /*  ////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -832,6 +942,10 @@ figure {
 
 main {
   background-color: rgb(255, 245, 250);
+}
+
+main.global > *:not(.hero) {
+  padding: 20px;
 }
 
 .hero {

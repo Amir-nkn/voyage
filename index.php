@@ -1,4 +1,6 @@
 <?php get_header();?>
+
+<h1>index.php</h1>
         <section class="hero">
             <div class="hero__contenu global">
                 <h1 class="hero__titre">
@@ -60,6 +62,7 @@
                 <article>
                     <h2><?php the_title(); ?></h2>
                     <div><?php the_content(); ?></div>
+
                 </article>
         <?php endwhile;
         endif; ?>
