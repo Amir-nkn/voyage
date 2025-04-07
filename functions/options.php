@@ -44,3 +44,8 @@ function modifie_requete_principal($query)
     }
 }
 add_action('pre_get_posts', 'modifie_requete_principal');
+
+register_nav_menus(array(
+    'menu_erreur' => __('Menu page 404'),
+  ));
+  

@@ -21,24 +21,19 @@ get_header();
 
 
     <section class="erreur__destinations">
-  <div class="erreur__boutons">
 
+  <nav class="erreur__menu">
     <?php
-    $populaire_query = new WP_Query(array(
-        'category_name' => 'populaire',
-        'posts_per_page' => 4,
-        'orderby' => 'rand'
-    ));
-
-    if ($populaire_query->have_posts()) :
-        while ($populaire_query->have_posts()) : $populaire_query->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="erreur__btn">
-              <?php the_title(); ?>
-            </a>
-    <?php endwhile; wp_reset_postdata(); endif; ?>
-    
-  </div>
+      wp_nav_menu(array(
+        'theme_location' => 'menu_erreur',
+        'container' => 'ul',
+        'menu_class' => 'erreur__menu-liste'
+      ));
+    ?>
+  </nav>
 </section>
+
+
 
 
  
