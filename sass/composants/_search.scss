@@ -1,16 +1,15 @@
-/* ==== Container principal des résultats ==== */
-.search-main {
+.recherche {
   max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
   background: #fefaff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.6s ease-in-out;
+  animation: recherche__fade-in 0.6s ease-in-out;
 }
 
 /* ==== Animation fade-in ==== */
-@keyframes fadeIn {
+@keyframes recherche__fade-in {
   from {
     opacity: 0;
     transform: translateY(-12px);
@@ -22,14 +21,14 @@
 }
 
 /* ==== Titre et description ==== */
-.search-results h2 {
+.recherche__entete h2 {
   font-size: 28px;
   color: rgb(44, 26, 58);
   text-align: center;
   margin-bottom: 16px;
 }
 
-.search-results p {
+.recherche__entete p {
   font-size: 17px;
   color: #666;
   text-align: center;
@@ -37,15 +36,14 @@
 }
 
 /* ==== Grille des résultats ==== */
-.search-container {
+.recherche__grille {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 
-/* ==== Article de type populaire ou search ==== */
-.populaire-article,
-.search-article {
+/* ==== Article ==== */
+.recherche__article {
   background: #fff;
   padding: 20px;
   border-radius: 14px;
@@ -54,15 +52,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.populaire-article:hover,
-.search-article:hover {
+.recherche__article:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ==== Image ==== */
-.populaire-article img,
-.search-article img {
+.recherche__image {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -70,56 +66,44 @@
   margin-bottom: 12px;
 }
 
-/* ==== Titres et textes ==== */
-.populaire-article h5,
-.search-article h5 {
+/* ==== Titre & Texte ==== */
+.recherche__article h5 {
   font-size: 20px;
   color: rgb(44, 26, 58);
   margin-bottom: 8px;
   font-weight: bold;
 }
 
-.populaire-article p,
-.search-article p {
+.recherche__article p {
   font-size: 15px;
   color: #555;
   line-height: 1.6;
 }
 
 /* ==== Galerie ==== */
-.gallery-item {
+.recherche__galerie-item {
   text-align: center;
 }
 
-.gallery-item img {
+.recherche__galerie-item img {
   width: 100%;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
+.recherche__galerie-item img:hover {
   transform: scale(1.03);
 }
 
-/* ==== Aucun résultat ==== */
-.no-results {
-  text-align: center;
-  padding: 20px;
-  background: #ffe6ea;
-  color: #b3002d;
-  border-radius: 10px;
-  margin-top: 30px;
-  font-weight: bold;
-}
 
 /* ==== Pagination ==== */
-.search-pagination {
+.recherche__pagination {
   margin-top: 30px;
   text-align: center;
 }
 
-.search-pagination a {
+.recherche__pagination a {
   padding: 10px 18px;
   margin: 5px;
   background: rgb(44, 26, 58);
@@ -130,7 +114,7 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.search-pagination a:hover {
+.recherche__pagination a:hover {
   background: #2c1c4a;
   transform: scale(1.05);
 }

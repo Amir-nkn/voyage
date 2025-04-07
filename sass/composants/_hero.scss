@@ -9,7 +9,7 @@
 .hero {
   position: relative;
   color: black;
-  padding: 50px 20px;
+  padding: 30px 20px;
 
   &__titre {
     color: white;
@@ -19,6 +19,7 @@
     transition: color 0.3s ease, transform 0.3s ease;
     text-align: center;
     cursor: pointer;
+    font-size: 60px;
   }
 
   &__titre:hover {
@@ -29,14 +30,18 @@
   &__description {
     max-width: 60ch;
     line-height: 1.5;
+    font-size: 24px;
+
   }
 
   &__contenu a {
     color: black;
+    font-size: 24px;
   }
 
   &__courriel a {
     color: black;
+    font-size: 24px;
   }
 
   &__bouton {
@@ -67,7 +72,8 @@
   gap: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 19rem;
+  margin-top: 16rem;
+margin-bottom: 8rem;
   padding: 20px;
   background: rgb(255, 255, 255);
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);

@@ -34,11 +34,12 @@
                             "container_class" =>"entete__menu"
                         ));
                         ?>
-                   
-                   <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="recherche">
-    <input type="search" name="s" class="recherche__input" placeholder="Rechercher..." value="<?php echo get_search_query(); ?>">
-    <button type="submit" class="search-button">🔍</button>
+                 <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="formulaire-recherche">
+    <input type="search"  name="s"  class="formulaire-recherche__champ"  placeholder="Rechercher..."  value="<?php echo get_search_query(); ?>">
+    
+    <button   type="submit"   class="formulaire-recherche__bouton">  🔍  </button>
 </form>
+
 
 
                    

@@ -1,24 +1,24 @@
-.erreur-404 {
+.erreur {
     text-align: center;
     padding: 80px 20px;
     background-color: #f9f5ff;
     color: #3d2551;
     font-family: "Segoe UI", Arial, sans-serif;
-    animation: fadeIn 1s ease-in;
+    animation: erreur__fade-in 1s ease-in;
     min-height: 70vh;
 }
 
-.erreur-404 h1 {
+.erreur__titre {
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.erreur-404 p {
+.erreur__texte {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
-.bouton-retour {
+.erreur__bouton {
     display: inline-block;
     background-color: #6c4ec1;
     color: white;
@@ -31,13 +31,13 @@
     transition: all 0.3s ease;
 }
 
-.bouton-retour:hover {
+.erreur__bouton:hover {
     background-color: #583aa1;
     transform: scale(1.05);
 }
 
-/* افکت ساده هنگام ورود */
-@keyframes fadeIn {
+/* Animation spécifique à ce block */
+@keyframes erreur__fade-in {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
