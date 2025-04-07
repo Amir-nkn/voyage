@@ -1,7 +1,5 @@
 <?php
-// ===== fichier 404.php =====
-get_header();
-
+// ===== fichier partie-404.php =====
 ?>
 <section class="erreur">
   <div class="erreur__contenu" style="background-image: url('<?php echo esc_url(get_theme_mod('erreur_404_image')); ?>');">
@@ -19,23 +17,15 @@ get_header();
       Retour à l'accueil
     </a>
 
-
     <section class="erreur__destinations">
-
-  <nav class="erreur__menu">
-  <?php wp_nav_menu(array(
-  'menu' => 'Menu destinations 404',
-  'container' => 'nav',
-  'container_class' => 'erreur__menu'
-)); ?>
-
-  </nav>
-</section>
-
-
-
-
- 
+      <nav class="erreur__menu">
+        <?php wp_nav_menu(array(
+          'menu' => 'Menu destinations 404',
+          'container' => 'nav',
+          'container_class' => 'erreur__menu'
+        )); ?>
+      </nav>
+    </section>
 
     <!-- Champ de recherche -->
     <form action="<?php echo home_url('/'); ?>" class="erreur__form">
@@ -45,5 +35,3 @@ get_header();
 
   </div>
 </section>
-
-<?php get_footer(); ?>
