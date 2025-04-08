@@ -1,4 +1,3 @@
-
 <?php
 function mon_theme_supports()
 {
@@ -44,7 +43,6 @@ function modifie_requete_principal($query)
     }
 }
 add_action('pre_get_posts', 'modifie_requete_principal');
-
 
 function ajouter_prix_a_api_rest() {
     register_rest_field('post', 'prix', array(

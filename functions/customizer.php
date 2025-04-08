@@ -105,7 +105,7 @@ function erreur_404_customizer($wp_customize) {
         'priority' => 30,
     ));
 
-    // ✅ Image de fond
+    //  Image de fond
     $wp_customize->add_setting('erreur_404_image', array(
         'default' => get_template_directory_uri() . '/images/404-default.jpg',
         'sanitize_callback' => 'esc_url'
@@ -116,7 +116,7 @@ function erreur_404_customizer($wp_customize) {
         'settings' => 'erreur_404_image',
     )));
 
-    // ✅ Titre
+    //  Titre
     $wp_customize->add_setting('erreur_404_titre', array(
         'default' => "Oops, vous avez échoué sur l'île 404 !",
         'sanitize_callback' => 'sanitize_text_field'
@@ -127,7 +127,7 @@ function erreur_404_customizer($wp_customize) {
         'type' => 'text',
     ));
 
-    // ✅ Message
+    //  Message
     $wp_customize->add_setting('erreur_404_message', array(
         'default' => "Pas de panique, cette page n'existe pas mais vous pouvez revenir à l'accueil !",
         'sanitize_callback' => 'sanitize_textarea_field'
@@ -138,7 +138,7 @@ function erreur_404_customizer($wp_customize) {
         'type' => 'textarea',
     ));
 
-    // ✅ Couleur du bouton
+    //  Couleur du bouton
     $wp_customize->add_setting('erreur_404_couleur_bouton', array(
         'default' => '#ffd700',
         'sanitize_callback' => 'sanitize_hex_color'
@@ -149,7 +149,7 @@ function erreur_404_customizer($wp_customize) {
         'type' => 'color',
     ));
 
-    // ✅ Couleur de fond du champ recherche
+    //  Couleur de fond du champ recherche
     $wp_customize->add_setting('erreur_404_couleur_input', array(
         'default' => '#ffffff',
         'sanitize_callback' => 'sanitize_hex_color'
