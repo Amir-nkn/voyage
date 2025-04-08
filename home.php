@@ -94,17 +94,41 @@ $hero_couleur = get_theme_mod('hero_couleur', '#000000');
         </div> 
         </div>
         </section>-->
-    <h2>Articles de la catégorie</h2>
-    <section class="destination">
-    <div class="global">
+  
 
+        <section class="destination">
+    <div class="global">
         <div class="destination__bouton">
             <?php categories_liste("destination"); ?>
         </div>
 
         <div class="destination__list"></div>
+
+        <div class="filtre-prix">
+  <label for="filtreInput">Filtrer par prix (max): </label>
+  <input type="number" id="filtreInput" placeholder="ex: 1000">
+  <button id="filtrerBtn">Filtrer</button>
+</div>
+
     </div>
 </section>
+
+<section class="temoignages">
+  <div class="global">
+    <h2>Témoignages</h2>
+    <div class="temoignages__list"></div>
+  </div>
+</section>
+
+<section class="promotions">
+  <div class="global">
+    <h2>Promotions</h2>
+    <div class="promotions__list"></div>
+  </div>
+</section>
+
+
+
 <?php get_footer(); ?>
 </body>
 </html>

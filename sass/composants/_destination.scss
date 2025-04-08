@@ -1,0 +1,114 @@
+/* === Style: Filtre Prix === */
+.filtre-prix {
+    margin: 2em 0;
+    padding: 1em;
+    background-color: #f1f1f1;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filtre-prix input[type="number"] {
+    padding: 8px;
+    font-size: 1rem;
+    width: 100px;
+  }
+  
+  .filtre-prix button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .filtre-prix button:hover {
+    background-color: #388e3c;
+  }
+  
+  /* === Style: Résultats destination filtrée === */
+  .destination__list > div {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  /* === Style: Témoignages === */
+  .temoignages__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  
+  .temoignage__item {
+    padding: 1em;
+    border-left: 4px solid #0073aa;
+    background-color: #eef6fb;
+    border-radius: 6px;
+  }
+  
+  /* === Style: Promotions === */
+  .promotions__list {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 1em;
+  }
+  
+  .promotion__item {
+    padding: 1em;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    background-color: #fffbe6;
+    transition: transform 0.2s;
+  }
+  
+  .promotion__item:hover {
+    transform: scale(1.02);
+  }
+  
+
+    
+  .categorie__ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+    margin-bottom: 1.5em;
+    list-style-type: none;
+  }
+  
+  .categorie__ul__li {
+    cursor: pointer;
+    padding: 0.6em 1.2em;
+    border: none;
+    background-color: #f0f0f5;
+    color: #333;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    user-select: none;
+  }
+  
+  .categorie__ul__li:hover {
+    background-color: #e0e0f8;
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  .categorie__ul__li.active {
+    background-color: #5c6bc0;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(92, 107, 192, 0.4);
+    transform: scale(1.08);
+  }
+  

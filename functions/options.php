@@ -24,7 +24,7 @@ function theme_tp_enqueue_styles()
         array(),
         filemtime(get_template_directory() . '/style.css')
     );
-    
+
     wp_enqueue_script(
         'destination_restapi',
         get_template_directory_uri() . '/js/destination.js',
@@ -44,6 +44,23 @@ function modifie_requete_principal($query)
     }
 }
 add_action('pre_get_posts', 'modifie_requete_principal');
+
+
+function ajouter_prix_a_api_rest() {
+    register_rest_field('post', 'prix', array(
+        'get_callback' => function ($post_arr) {
+            return get_field('prix', $post_arr['id']); 
+        },
+        'schema' => null,
+    ));
+}
+add_action('rest_api_init', 'ajouter_prix_a_api_rest');
+
+
+
+
+
+
 
 register_nav_menus(array(
     'menu_erreur' => __('Menu page 404'),
